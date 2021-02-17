@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { ReactElement } from "react"
 
 type HeaderProps = {
   siteTitle: string
 }
 
-const Header = ({ siteTitle= '' }: HeaderProps) => (
+const Header = ({ siteTitle= '' }: HeaderProps): ReactElement => (
   <header
     style={{
       background: `rebeccapurple`,
