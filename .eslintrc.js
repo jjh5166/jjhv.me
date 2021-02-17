@@ -8,4 +8,16 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
   ],
+  env: {
+    node: true,
+    browser: true
+  },
+  rules: {
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  settings: {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
