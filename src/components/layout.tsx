@@ -5,50 +5,23 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { ReactElement } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { ReactElement } from 'react'
+import styled from 'styled-components'
 
-import Header from "./header"
-import "./layout.css"
+import '../index.css'
 
 type LayoutProps = {
   children: React.ReactNode
+  className?: string
 }
 
-const Layout = ({ children } : LayoutProps): ReactElement => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+const Layout = ({ children, className }: LayoutProps): ReactElement => {
+  return <div className={className}>{children}</div>
 }
 
-export default Layout
+const StyledLayout = styled(Layout)`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`
+export default StyledLayout
