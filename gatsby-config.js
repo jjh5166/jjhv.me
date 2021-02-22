@@ -27,6 +27,13 @@ module.exports = {
         icon: `src/images/j-favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`pacifico`, `overpass`],
+        display: 'swap',
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

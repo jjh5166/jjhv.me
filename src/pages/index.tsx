@@ -1,21 +1,26 @@
-import React, { ReactElement } from "react"
-import { Link } from "gatsby"
+import React, { ReactElement } from 'react'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import LagosBackground from '../components/Images/BackDropImage'
+import Title from '../components/Title'
+import {
+  ParallaxContainer,
+  ParallaxGroup,
+  ParallaxLayer,
+} from '../components/Parallax'
 
 const IndexPage = (): ReactElement => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to `Using TypeScript`</Link>
+    <SEO title="John Hartnett" />
+    <ParallaxContainer>
+      <ParallaxGroup style={{ height: '100%' }}>
+        <LagosBackground />
+        <ParallaxLayer type="fore">
+          <Title />
+        </ParallaxLayer>
+      </ParallaxGroup>
+    </ParallaxContainer>
   </Layout>
 )
 
