@@ -19,7 +19,7 @@ const BackDropImage = ({ className }: BackDropImageProps): ReactElement => {
     }
   `)
   const imageData = data.desktop.childImageSharp.fluid
-  return <BackgroundImage fluid={imageData} className={className} type="base">
+  return <BackgroundImage fluid={imageData} className={className}>
     <div className="image-overlay"></div>
   </BackgroundImage>
 }

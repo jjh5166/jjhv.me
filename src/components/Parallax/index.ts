@@ -19,8 +19,8 @@ const handleLayerType = (type: string) => {
       )
     case 'fly':
       return (
-        '-webkit-transform: translateZ(180px) scale(.4) !important;' +
-        'transform: translateZ(180px) scale(.4) !important;'
+        '-webkit-transform: translateZ(240px) scale(.2) !important;' +
+        'transform: translateZ(240px) scale(.2) !important;'
       )
     default:
       return null
