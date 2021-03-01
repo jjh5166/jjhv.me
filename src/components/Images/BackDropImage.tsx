@@ -19,19 +19,29 @@ const BackDropImage = ({ className }: BackDropImageProps): ReactElement => {
     }
   `)
   const imageData = data.desktop.childImageSharp.fluid
-  return <BackgroundImage fluid={imageData} className={className}>
-    <div className="image-overlay"></div>
-  </BackgroundImage>
+  return (
+    <div className={className}>
+      <BackgroundImage fluid={imageData} className={'img-wrapper'}>
+        <div className="image-overlay"></div>
+      </BackgroundImage>
+    </div>
+  )
 }
 
 const StyledBackDropImage = styled(BackDropImage)`
-  width: 100%;
+  position: fixed;
+  z-index: -1;
   height: 100%;
-  background-size: cover;
-  box-shadow: 0 2px 25px black;
-  background-position-x: 46%;
-  @media only screen and (min-width: 813px) {
-    background-position-x: 30%;
+  width: 100%;
+  .img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    box-shadow: 0 2px 25px black;
+    background-position-x: 46%;
+    @media only screen and (min-width: 813px) {
+      background-position-x: 30%;
+    }
   }
   div.image-overlay {
     height: 100%;
